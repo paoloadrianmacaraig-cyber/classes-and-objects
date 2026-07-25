@@ -35,6 +35,19 @@ public class Main {
         }
     }
 
+    public static int getValidYear(Scanner sc, String prompt) {
+        int year;
+        while (true) {
+            year = getValidInt(sc, prompt);
+            if (year > 2026) {
+                System.out.println("Year cannot be beyond 2026. Please try again.");
+            } else {
+                break;
+            }
+        }
+        return year;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Library library = new Library();
@@ -53,7 +66,7 @@ public class Main {
                 case 1:
                     String title = getValidString(sc, "Enter title: ", true);
                     String author = getValidString(sc, "Enter author: ", false);
-                    int year = getValidInt(sc, "Enter year: ");
+                    int year = getValidYear(sc, "Enter year: ");
                     library.addBook(new Book(title, author, year));
                     break;
                 case 2:
@@ -72,4 +85,3 @@ public class Main {
         }
     }
 }
-
