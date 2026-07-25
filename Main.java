@@ -39,7 +39,7 @@ public class Main {
     int year;
     while (true) {
         year = getValidInt(sc, prompt);
-        if (year < 1 || year > 2026) {
+        if (year < 1000 || year > 2026) {
             System.out.println("Year must be between 1 and 2026. Please try again.");
         } else {
             break;
